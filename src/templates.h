@@ -35,42 +35,33 @@ PROGMEM const char FAUXMO_TCP_HEADERS[] =
     "Connection: close\r\n\r\n";
 
 PROGMEM const char FAUXMO_TCP_STATE_RESPONSE[] = "["
-    "{\"success\":{\"/lights/%d/state/on\":%s}}"
+    "{\"success\":{\"/sensors/%d/state/bri\":%d}}"
 "]";
 
-// Working with gen1 and gen3, ON/OFF/%, gen3 requires TCP port 80
 PROGMEM const char FAUXMO_DEVICE_JSON_TEMPLATE[] = "{"
-    "\"type\": \"Extended color light\","
-    "\"name\": \"%s\","
-    "\"uniqueid\": \"%s\","
-    "\"modelid\": \"LCT015\","
-    "\"manufacturername\": \"Philips\","
-    "\"productname\": \"E4\","
+    "\"type\": \"Water Level Sensor\"," // Mudamos o tipo do dispositivo
+    "\"name\": \"%s\"," // Nome configurável do sensor
+    "\"uniqueid\": \"%s\"," // ID único do dispositivo
+    "\"modelid\": \"WLS001\"," // ID do modelo fictício
+    "\"manufacturername\": \"ESP8266\"," // Nome do fabricante fictício
+    "\"productname\": \"Smart Water Level Sensor\"," // Nome do produto
     "\"state\":{"
-        "\"on\": %s,"
-	"\"bri\": %d,"
-	"\"xy\": [0,0],"
-	"\"hue\": 0,"
-	"\"sat\": 0,"
-	"\"effect\": \"none\","
-	"\"colormode\": \"xy\","
-	"\"ct\": 500,"
-	"\"mode\": \"homeautomation\","
-	"\"reachable\": true"
+        "\"on\": %s," // O sensor está sempre ativo
+        "\"bri\": %d," // Aqui usamos o brilho como analogia ao nível de água (%)
+        "\"reachable\": true"
     "},"
     "\"capabilities\": {"
         "\"certified\": false,"
         "\"streaming\": {\"renderer\":true,\"proxy\":false}"
     "},"
-    "\"swversion\": \"5.105.0.21169\""
-"}";
+    "\"swversion\": \"1.0.0\""
+    "}";
 
 // Use shorter description template when listing all devices
 PROGMEM const char FAUXMO_DEVICE_JSON_TEMPLATE_SHORT[] = "{"
-    "\"type\": \"Extended color light\","
+    "\"type\": \"Water Level Sensor\","
     "\"name\": \"%s\","
     "\"uniqueid\": \"%s\""
-
 "}";
 
 
