@@ -335,7 +335,7 @@ bool fauxmoESP::_onTCPControl(AsyncClient *client, String url, String body) {
 				if (0 == _devices[id].value) _devices[id].value = 255;
 			}
 
-			char response[strlen_P(FAUXMO_TCP_STATE_RESPONSE)+10];
+			char response[strlen_P(FAUXMO_TCP_STATE_RESPONSE)+30];
 			snprintf_P(
 				response, sizeof(response),
 				FAUXMO_TCP_STATE_RESPONSE,
