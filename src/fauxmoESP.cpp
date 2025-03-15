@@ -225,7 +225,6 @@ bool fauxmoESP::_onTCPList(AsyncClient *client, String url, String body) {
 	} else {
 		response = _deviceJson(id-1);
 	}
-	Serial.println(response);
 	_sendTCPResponse(client, "200 OK", (char *) response.c_str(), "application/json");
 	
 	return true;

@@ -50,8 +50,8 @@ PROGMEM const char FAUXMO_DEVICE_JSON_TEMPLATE[] = "{"
     "\"manufacturername\": \"Philips\","
     "\"productname\": \"E4\","
     "\"state\":{"
-        "\"on\": %s,"
-	"\"bri\": %03d,"
+        "\"on\":%s,"
+	"\"bri\":%03d,"
 	"\"xy\": [0,0],"
 	"\"hue\": 0,"
 	"\"sat\": 0,"
@@ -73,7 +73,6 @@ PROGMEM const char FAUXMO_DEVICE_JSON_TEMPLATE_SHORT[] = "{"
     "\"type\": \"Extended color light\","
     "\"name\": \"%s\","
     "\"uniqueid\": \"%s\""
-
 "}";
 
 
