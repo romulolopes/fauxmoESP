@@ -119,7 +119,8 @@ String fauxmoESP::_deviceJson(unsigned char id, bool all = true) {
 
 	DEBUG_MSG_FAUXMO("[FAUXMO] Sending device info for \"%s\", uniqueID = \"%s\"\n", device.name, device.uniqueid);
 	char buffer[strlen_P(FAUXMO_DEVICE_JSON_TEMPLATE) + 64];
-
+	Serial.println(device.value);
+	all = true;
 	if (all)
 	{
 		snprintf_P(
