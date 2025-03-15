@@ -37,7 +37,7 @@ PROGMEM const char FAUXMO_TCP_HEADERS[] =
 PROGMEM const char FAUXMO_TCP_STATE_RESPONSE[] = "["
     "{\"success\":{"
         "\"/lights/%d/state/on\":%s,"
-        "\"/lights/%d/state/bri\":%d"
+        "\"/lights/%d/state/bri\":%03d"
     "}}"
 "]";
 

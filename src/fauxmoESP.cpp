@@ -224,7 +224,6 @@ bool fauxmoESP::_onTCPList(AsyncClient *client, String url, String body) {
 	// Client is requesting a single device
 	} else {
 		response = _deviceJson(id-1);
-		Serial.println(response);
 	}
 
 	_sendTCPResponse(client, "200 OK", (char *) response.c_str(), "application/json");
